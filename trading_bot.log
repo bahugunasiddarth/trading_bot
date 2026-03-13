@@ -1,3 +1,6 @@
 2026-03-13 20:33:38,779 - trading_bot - INFO - Binance Testnet Client initialized successfully.
 2026-03-13 20:33:38,779 - trading_bot - INFO - Preparing LIMIT SELL order for BTCUSDT - Qty: 0.001
 2026-03-13 20:33:39,557 - trading_bot - ERROR - Binance API Error: API-key format invalid. (Code: -2014)
+2026-03-13 20:44:03,313 - trading_bot - INFO - Binance Testnet Client initialized successfully.
+2026-03-13 20:44:03,313 - trading_bot - INFO - Preparing STOP_LIMIT BUY order for BTCUSDT - Qty: 0.001
+2026-03-13 20:44:04,237 - trading_bot - ERROR - Binance API Error: API-key format invalid. (Code: -2014)

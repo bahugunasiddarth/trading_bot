@@ -1,7 +1,7 @@
 from bot.logging_config import logger
 from binance.exceptions import BinanceAPIException
 
-def execute_order(client, symbol, side, order_type, quantity, price=None):
+def execute_order(client, symbol, side, order_type, quantity, price=None, stop_price=None):
     """
     Sends the order to Binance Futures Testnet.
     """
@@ -21,7 +21,13 @@ def execute_order(client, symbol, side, order_type, quantity, price=None):
 
         if order_type == "LIMIT":
             params["price"] = str(price)
-            params["timeInForce"] = "GTC"  # Good 'Til Cancelled required for LIMIT
+            params["timeInForce"] = "GTC"
+
+        # Added logic for STOP_LIMIT
+        if order_type == "STOP_LIMIT":
+            params["price"] = str(price)
+            params["stopPrice"] = str(stop_price)
+            params["timeInForce"] = "GTC"
 
         # Create Futures Order
         response = client.futures_create_order(**params)
